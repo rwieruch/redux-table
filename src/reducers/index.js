@@ -1,6 +1,8 @@
 import { combineReducers } from 'redux';
-import toggle from './toggle';
+import items from './items';
+import select from './select';
 
 export default combineReducers({
-    toggle
+    items,
+    select,
 });

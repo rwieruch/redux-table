@@ -1,7 +1,7 @@
-/* eslint-disable max-len */
-import { setRequestInProcess } from './request';
-/* eslint-enable max-len */
+import { setItems } from './items';
+import { selectItem } from './select';
 
 export {
-  setRequestInProcess
+  setItems,
+  selectItem,
 };
