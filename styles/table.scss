@@ -1,0 +1,10 @@
+.table {
+    .row, .row-header {
+        display: flex;
+        padding: 5px 0;
+    }
+
+    .cell {
+        min-width: 150px;
+    }
+}

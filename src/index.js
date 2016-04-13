@@ -19,7 +19,11 @@ const todos = [
     completed: false
   },
   {
-    name: 'Second',
+    name: 'Third',
+    completed: false
+  },
+  {
+    name: 'Fourth',
     completed: false
   }
 ];

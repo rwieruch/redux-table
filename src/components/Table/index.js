@@ -5,8 +5,20 @@ import * as actions from '../../actions/index';
 import classNames from 'classnames';
 import map from 'lodash/map';
 
+function HeaderCell({ text }) {
+  return (
+    <div className="cell">
+      {text}
+    </div>
+  );
+}
+
 function NameCell({ name }) {
-  return <div>{name}</div>;
+  return (
+    <div className="cell">
+      {name}
+    </div>
+  );
 }
 
 function CompletedCell({ completed }) {
@@ -17,7 +29,7 @@ function CompletedCell({ completed }) {
   });
 
   return (
-    <div>
+    <div className="cell">
       <i className={iconClass} />
     </div>
   );
@@ -30,9 +42,20 @@ function Row({
   const { name, completed } = item;
 
   return (
-    <div>
+    <div className="row">
       <NameCell name={name} />
       <CompletedCell completed={completed} />
+    </div>
+  );
+}
+
+function HeaderRow({
+
+}) {
+  return (
+    <div className="row-header">
+      <HeaderCell text={"Name"} />
+      <HeaderCell text={"Completed"} />
     </div>
   );
 }
@@ -45,7 +68,8 @@ function Table({
   // setPaginate,
 }) {
   return (
-    <div>
+    <div className="table">
+      <HeaderRow />
       {map(items, (item, key) => {
         const props = { key, item }
         return <Row { ...props } />;
