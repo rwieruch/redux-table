@@ -1,7 +1,7 @@
 import * as actionTypes from '../../constants/actionTypes';
 
 const initialState = {
-  selectedItems: {},
+  selectedItems: [],
 };
 
 export default function(state = initialState, action) {
@@ -14,6 +14,17 @@ export default function(state = initialState, action) {
 
 function setSelect(state, action) {
   const { id } = action;
-  // TODO: do select or deselect
-  return { ...state };
+  const index = state.selectedItems.indexOf(id);
+
+  let selectedItems;
+  if (index === -1) {
+    selectedItems = [ ...state.selectedItems, id ];
+  } else {
+    selectedItems = [
+        ...state.selectedItems.slice(0, index),
+        ...state.selectedItems.slice(index + 1)
+    ];
+  }
+
+  return { ...state, selectedItems };
 }

@@ -11,18 +11,22 @@ const store = configureStore();
 
 const todos = [
   {
+    id: '1',
     name: 'First',
     completed: true
   },
   {
+    id: '2',
     name: 'Second',
     completed: false
   },
   {
+    id: '3',
     name: 'Third',
     completed: false
   },
   {
+    id: '4',
     name: 'Fourth',
     completed: false
   }

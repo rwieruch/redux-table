@@ -4,6 +4,23 @@
         padding: 5px 0;
     }
 
+    .row {
+        cursor: pointer;
+
+        &:hover {
+            background: #F4F7FA;
+        }
+    }
+
+    .is-selected {
+        background: #5790bd;
+        color: #FFFFFF;
+
+        &:hover {
+            background: #5790bd;
+        }
+    }
+
     .cell {
         min-width: 150px;
         padding: 5px;

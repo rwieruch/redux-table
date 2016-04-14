@@ -36,13 +36,24 @@ function CompletedCell({ completed }) {
 }
 
 function Row({
-  item
+  item,
+  isSelected,
+  selectItem
 }) {
 
   const { name, completed } = item;
 
+  const rowClass = classNames(
+    'row',
+    {
+      'is-selected': isSelected
+    }
+  );
+
+  const onSelect = () => selectItem(item.id);
+
   return (
-    <div className="row">
+    <div onClick={onSelect} className={rowClass}>
       <NameCell name={name} />
       <CompletedCell completed={completed} />
     </div>
@@ -62,6 +73,7 @@ function HeaderRow({
 
 function Table({
   items,
+  selectedItems,
   selectItem,
   // setFilter,
   // setSort,
@@ -71,7 +83,8 @@ function Table({
     <div className="table">
       <HeaderRow />
       {map(items, (item, key) => {
-        const props = { key, item }
+        const isSelected = selectedItems.indexOf(item.id) !== -1;
+        const props = { key, item, selectItem, isSelected };
         return <Row { ...props } />;
       })}
     </div>
@@ -80,7 +93,8 @@ function Table({
 
 function mapStatsToProps(state) {
   return {
-    items: state.items
+    items: state.items,
+    selectedItems: state.select.selectedItems
   }
 }
 
