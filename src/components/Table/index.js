@@ -4,6 +4,7 @@ import { bindActionCreators } from 'redux';
 import * as actions from '../../actions/index';
 import classNames from 'classnames';
 import map from 'lodash/map';
+import filter from 'lodash/filter';
 
 function HeaderCell({ text }) {
   return (
@@ -75,7 +76,6 @@ function Table({
   items,
   selectedItems,
   selectItem,
-  // setFilter,
   // setSort,
   // setPaginate,
 }) {
@@ -91,17 +91,27 @@ function Table({
   );
 }
 
+function patternFilter(pattern) {
+  return (items) => {
+    return filter(items, (item) => item.name.toLowerCase().indexOf(pattern) !== -1);
+  }
+}
+
 function mapStatsToProps(state) {
+
+  const { pattern } = state.filter;
+  const filterFn = pattern ? patternFilter(pattern) : (items) => items;
+  const items = filterFn(state.items);
+
   return {
-    items: state.items,
-    selectedItems: state.select.selectedItems
+    items,
+    selectedItems: state.select.selectedItems,
   }
 }
 
 function mapDispatchToProps(dispatch) {
   return {
     selectItem: bindActionCreators(actions.selectItem, dispatch),
-    // setFilter: bindActionCreators(actions.setFilter, dispatch),
     // setSort: bindActionCreators(actions.setSort, dispatch),
     // setPaginate: bindActionCreators(actions.setPaginate, dispatch),
   };

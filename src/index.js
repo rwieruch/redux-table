@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import configureStore from './stores/configureStore';
 import * as actions from './actions/index';
-import { TableContainer } from './components/Table';
+import { App } from './components/App';
 
 require('../styles/index.scss');
 
@@ -36,7 +36,7 @@ store.dispatch(actions.setItems(todos));
 
 ReactDOM.render(
   <Provider store={store}>
-    <TableContainer />
+    <App />
   </Provider>,
-  document.getElementById('table')
+  document.getElementById('app')
 );
