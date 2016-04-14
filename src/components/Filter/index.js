@@ -10,7 +10,7 @@ function Filter({
   const onFilterChange = (event) => setFilter(event.target.value);
 
   return (
-    <div>
+    <div className="filter">
       <input onChange={onFilterChange} value={pattern} />
     </div>
   );

@@ -25,8 +25,7 @@ function NameCell({ name }) {
 function CompletedCell({ completed }) {
 
   const iconClass = classNames({
-    'fa fa-check-square-o': completed,
-    'fa fa-square-o': !completed,
+    'fa fa-check': completed,
   });
 
   return (
