@@ -44,6 +44,8 @@
     "react-addons-test-utils": "^0.14.7",
     "react-hot-loader": "^1.3.0",
     "sass-loader": "^3.1.2",
+    "sinon": "^1.17.3",
+    "sinon-chai": "^2.8.0",
     "style-loader": "^0.13.0",
     "webpack": "^1.12.9",
     "webpack-dev-server": "^1.14.0"

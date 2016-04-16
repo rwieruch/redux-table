@@ -1,42 +1,50 @@
 import * as actionTypes from '../../constants/actionTypes';
-import toggle from './index';
+import select from './index';
 
-describe('toggle reducer', () => {
+describe('select reducer', () => {
 
-  describe('SET_TOGGLED', () => {
+  describe('TABLE_SELECT', () => {
 
-    it('sets something to toggled', () => {
-      const TOGGLE_TYPE = 'FOO_TOGGLE';
+    it('sets an item as selected, when it is not in list', () => {
+      const id = 'x';
 
       const action = {
-        type: actionTypes.SET_TOGGLED,
-        toggleType: TOGGLE_TYPE
-      }
-
-      const expectedState = {
-        [TOGGLE_TYPE]: true
+        type: actionTypes.TABLE_SELECT,
+        id
       };
 
-      expect(toggle(undefined, action)).to.eql(expectedState);
+      const initialState = {
+        selectedItems: []
+      };
+
+      const expectedState = {
+        selectedItems: [id]
+      };
+
+      const nextState = select(initialState, action);
+
+      expect(nextState).to.eql(expectedState);
     });
 
-    it('sets something to untoggled, when it was toggled before', () => {
-      const TOGGLE_TYPE = 'FOO_TOGGLE';
+    it('sets an item as not selected, when it was selected', () => {
+        const id = 'x';
 
-      const action = {
-        type: actionTypes.SET_TOGGLED,
-        toggleType: TOGGLE_TYPE
-      }
+        const action = {
+          type: actionTypes.TABLE_SELECT,
+          id
+        };
 
-      const previousState = {
-        [TOGGLE_TYPE]: true
-      }
+        const initialState = {
+          selectedItems: [id]
+        };
 
-      const expectedState = {
-        [TOGGLE_TYPE]: false
-      };
+        const expectedState = {
+          selectedItems: []
+        };
 
-      expect(toggle(previousState, action)).to.eql(expectedState);
+        const nextState = select(initialState, action);
+
+        expect(nextState).to.eql(expectedState);
     });
 
   });

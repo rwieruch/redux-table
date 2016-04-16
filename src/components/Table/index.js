@@ -122,7 +122,7 @@ function Table({
     <div className="table">
       <HeaderRow setSort={setSort} sortProps={sortProps} />
       {map(items, (item, key) => {
-        const isSelected = selectedItems.indexOf(item.id) !== -1;
+        const isSelected = selectedItems && selectedItems.indexOf(item.id) !== -1;
         const rowProps = { key, item, selectItem, isSelected };
         return <Row { ...rowProps } />;
       })}
