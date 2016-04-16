@@ -12,7 +12,7 @@ https://twitter.com/rwieruch
 
 ## Run
 
-1. Clone Repository: git clone git@github.com:rwieruch/redux-table.git
+1. Clone Repository: git clone `git@github.com:rwieruch/redux-table.git`
 2. npm install
 3. npm start
 4. npm test
