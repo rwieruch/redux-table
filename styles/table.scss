@@ -25,4 +25,12 @@
         min-width: 150px;
         padding: 5px;
     }
+
+    .cell-header {
+        cursor: pointer;
+    }
+
+    .is-active {
+        font-weight: bold;
+    }
 }

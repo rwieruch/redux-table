@@ -28,6 +28,11 @@ function mapDispatchToProps(dispatch) {
   };
 }
 
+Filter.propTypes = {
+  pattern: React.PropTypes.string,
+  setFilter: React.PropTypes.func,
+};
+
 const FilterContainer = connect(mapStatsToProps, mapDispatchToProps)(Filter);
 
 export {

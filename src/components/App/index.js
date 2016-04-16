@@ -8,7 +8,7 @@ function App() {
       <FilterContainer />
       <TableContainer />
     </div>
-  )
+  );
 }
 
 export {
