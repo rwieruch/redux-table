@@ -5,7 +5,6 @@ import sinon from 'sinon';
 describe('Table', () => {
 
   const selectItemSpy = sinon.spy();
-  const sortFnSpy = sinon.spy();
   const setSortSpy = sinon.spy();
 
   const props = {
@@ -14,7 +13,7 @@ describe('Table', () => {
     selectItem: selectItemSpy,
     sortProps: {
       property: 'NAME',
-      sortFn: sortFnSpy,
+      sortFn: () => {},
       reverse: true
     },
     setSort: setSortSpy
@@ -56,6 +55,13 @@ describe('Table', () => {
 
     element.find('.cell-header').first().simulate('click');
     expect(setSortSpy.calledOnce).to.be.true;
+  });
+
+  it('triggers set selected item when row is clicked', () => {
+    const element = mount(<Table { ...props } />);
+
+    element.find('.row').first().simulate('click');
+    expect(selectItemSpy.calledOnce).to.be.true;
   });
 
 });
