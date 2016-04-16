@@ -4,7 +4,7 @@ Rich table component build with redux and react. It provides interactions like s
 
 Tutorial: ...
 
-Live: `http://rwieruch.github.io/redux-table/`
+Live: [redux-table](http://rwieruch.github.io/redux-table/)
 
 Feedback is more than appreciated via GitHub or Twitter :)
 
