@@ -11,7 +11,7 @@ function Filter({
 
   return (
     <div className="filter">
-      <input onChange={onFilterChange} value={pattern} />
+      <input onChange={onFilterChange} value={pattern} placeholder={'Search'} />
     </div>
   );
 }

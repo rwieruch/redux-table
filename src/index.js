@@ -12,22 +12,27 @@ const store = configureStore();
 const todos = [
   {
     id: '1',
-    name: 'First',
+    name: 'learn react',
     completed: true
   },
   {
     id: '2',
-    name: 'Second',
+    name: 'learn redux',
     completed: false
   },
   {
     id: '3',
-    name: 'Third',
+    name: 'build your first app',
     completed: false
   },
   {
     id: '4',
-    name: 'Fourth',
+    name: 'learn thunk',
+    completed: false
+  },
+  {
+    id: '5',
+    name: 'learn sagas',
     completed: false
   }
 ];
