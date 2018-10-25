@@ -1,5 +1,7 @@
 # redux-table
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/rwieruch/redux-table.svg)](https://greenkeeper.io/)
+
 Table component build with redux and react. It provides interactions like sort, filter and selection.
 
 Live: [redux-table](http://rwieruch.github.io/redux-table/)
